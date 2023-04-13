@@ -206,31 +206,70 @@ $f(x) = \frac{1}{1 + exp(-x)}$
 
 % Latex'de kod koyabilirsiniz python formatında. Aşağıdaki örnekleri silip içine kendi kodunuzu koyun
 \begin{python}
-kod_buraya = None
-if kod_buraya:
-    devam_ise_buraya = 0
+import torch
+import torch.nn as nn
 
-print(devam_ise_buraya)
+torch.manual_seed(1)
+X = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float)
+
+class myClass(nn.Module):
+
+    def __init__(self):
+
+        super(myClass, self).__init__()
+        self.hidden = nn.Linear(3, 50)
+        self.output = nn.Linear(50, 1)
+
+    def forward(self, x):
+
+        x = torch.tanh(self.hidden(x))
+        x = torch.sigmoid(self.output(x))
+        return x
+
+model = myClass()
+output = model(X)
+
+print(output)
+
 \end{python}
 
-Sonuç da buraya
+\textbf{tensor([[0.4892],[0.5566]], $grad_fn=<SigmoidBackward0>)$}
 
 \subsection{(5 Puan)} \textbf{Yukarıdaki yapay sinir ağını çalıştırmadan önce Seed değerini öğrenci numaranız olarak değiştirip, kodu aşağıdaki kod bloğuna ve altına da sonucu yapıştırın:}
 
 \begin{python}
-kod_buraya = None
-if kod_buraya:
-    devam_ise_buraya = 0
+import torch
+import torch.nn as nn
 
-print(devam_ise_buraya)
+torch.manual_seed(180401058)
+X = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float)
+
+class myClass(nn.Module):
+
+    def __init__(self):
+
+        super(myClass, self).__init__()
+        self.hidden = nn.Linear(3, 50)
+        self.output = nn.Linear(50, 1)
+
+    def forward(self, x):
+
+        x = torch.tanh(self.hidden(x))
+        x = torch.sigmoid(self.output(x))
+        return x
+
+model = myClass()
+output = model(X)
+
+print(output)
 \end{python}
 
-Sonuç da buraya
+\textbf{tensor([[0.4861], [0.4376]], $grad_fn=<SigmoidBackward0>)$}
 
 \subsection{(5 Puan)} \textbf{Kodlarınızın ve sonuçlarınızın olduğu jupyter notebook'un Github repository'sindeki linkini aşağıdaki url kısmının içine yapıştırın. İlk sayfada belirttiğim gün ve saate kadar halka açık (public) olmasın:}
 % size ait Github olmak zorunda, bu vize için ayrı bir github repository'si açıp notebook'u onun içine koyun. Kendine ait olmayıp da arkadaşının notebook'unun linkini paylaşanlar 0 alacak.
 
-\url{www.githublinkiburaya.com}
+\url{https://github.com/BasakUlker/yapaySinirAglari}
 
 \section{(Toplam 40 Puan) Multilayer Perceptron (MLP):} 
 \textbf{Bu bölümdeki sorularda benim vize ile beraber paylaştığım Prensesi İyileştir (Cure The Princess) Veri Seti parçaları kullanılacak. Hikaye şöyle (soruyu çözmek için hikaye kısmını okumak zorunda değilsiniz):} 
