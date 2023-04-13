@@ -6,6 +6,8 @@
 # İçindekiler
 
 - main.tex: PDF ödevimin LaTeX kodu
+- soru4_1.py
+- soru4_2.py
 - soru5_1.py
 - soru5_2.py
 - soru5_3.py
