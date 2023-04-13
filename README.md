@@ -1,9 +1,9 @@
-#Yapay Sinir Ağları
+# Yapay Sinir Ağları
 
 Hazırlayan: Başak Ülker
 Numara: 180401058
 
-#İçindekiler
+# İçindekiler
 
 -main.tex: PDF ödevimin LaTeX kodu
 -
