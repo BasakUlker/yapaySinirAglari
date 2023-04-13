@@ -6,5 +6,7 @@
 # İçindekiler
 
 - main.tex: PDF ödevimin LaTeX kodu
-- Ekran Görüntüsü - 2023-04-13 21-25-40.png: resim2.png (Soru 5.2'nin çıktısı)
-- : resim3.png (Soru 5.3'ün çıktısı)
+- soru5_1.py
+- soru5_2.py
+- soru5_3.py
+
